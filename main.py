@@ -78,7 +78,8 @@ while True:
 
                     pyautogui.moveTo(currX, currY)    # Moving the cursor
                     cv2.circle(cameraFeedImg, (indexFingerTipX, indexFingerTipY), 7, (255, 0, 255), cv2.FILLED)
-                    prevX, prevY = currX, currY
+                    prevX = currX
+                    prevY = currY
 
                 if fingers[1] == 1 and fingers[2] == 1:     # If index finger & middle finger both are up
                     distance = math.dist(lmList[8], lmList[12])
@@ -100,13 +101,6 @@ while True:
                         cv2.circle(cameraFeedImg, (cx, cy), 15, (0, 255, 0), cv2.FILLED)
                         pyautogui.click()    # Perform Click
 
-                 # Thumb is down and other fingers are down
-                if fingers[0] == 1 and fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
-                    screenshotPath = f'screenshots/screenshot_{screenshotNum}.png'
-                    pyautogui.screenshot(screenshotPath)
-                    screenshotNum += 1
-                    print(f'Screenshot saved at {screenshotPath}')
-                    time.sleep(1)
 
                 # Thumb is down and other fingers are up
                 if fingers[0] == 1 and fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 1:
@@ -117,6 +111,14 @@ while True:
                 if fingers[0] == 0 and fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
                     time.sleep(.1)
                     pyautogui.scroll(-300)
+                
+                # Thumb is down and other fingers are down
+                if fingers[0] == 1 and fingers[1] == 0 and fingers[2] == 0 and fingers[3] == 0 and fingers[4] == 0:
+                    screenshotPath = f'screenshots/screenshot_{screenshotNum}.png'
+                    pyautogui.screenshot(screenshotPath)
+                    screenshotNum += 1
+                    print(f'Screenshot saved at {screenshotPath}')
+                    time.sleep(1)
     
                
     except Exception as e:

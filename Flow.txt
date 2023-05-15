@@ -1,0 +1,24 @@
+# TA1 :
+1. Write Code to get the index finger Tip coordinates
+2. Write Condition to get the index finger Tip only when the Landmark list length is greater than 0
+3. Write code to move the cursor usin pyautogui
+
+#TA2 : 
+1. Write code  for mouse click using gesture
+- Concept 
+  a> find distance between the two Landmarks
+  b> Get the index and middle finger tip coordinates
+  c> Find th center point of two fingers
+  d> Draw the line between two fingers
+  e> write condition to check when the distance is less than 20 do the mouse click using pyautogui
+
+
+TA3 :
+1. Teacher will write code for Scroll up
+
+SA3.1 :
+2. Student will write code for Scroll down
+
+
+SA3.2
+1. Write code to capture the screenshot
